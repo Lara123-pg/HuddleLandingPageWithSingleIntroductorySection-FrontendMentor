@@ -1,0 +1,117 @@
+div.container {
+    div.page {
+        @include Display(space-around);
+        @include StyleWH(100vw, 100vh);
+
+        flex-direction: column;
+
+        header {
+            @include Display(flex-start);
+            @include StyleWH(100px, 100px);
+
+            padding: 1.5em;
+        }
+
+        main {
+            @include Display(space-around, center);
+
+            img {
+                @include StyleWH(590px, 390px);
+            }
+
+            div.infos {
+                @include Display(space-around, flex-start);
+                flex-direction: column;
+           
+                height: 80%;
+
+                h1 {
+                    @include FontColor($color3, 2.5rem, 600);
+    
+                    font-family: 'Poppins', sans-serif;
+        
+                    width: 500px;
+                }
+
+                p {
+                    @include FontColor($color3, 1.2rem, 400);
+            
+                    font-family: 'Open Sans', sans-serif;
+    
+                    width: 520px;
+                }
+
+                button {
+                    @include StyleWH(180px, 50px);
+                    @include FontColor($color1, 1.1rem, 400);
+
+                    border: 0;
+                    border-radius: 50px;
+
+                    font-family: 'Poppins', sans-serif;
+
+                    box-shadow: 0 0 0.5em #000;
+
+                    &:hover {
+                        background-color: $color2;
+                        
+                        cursor: pointer;
+
+                        color: $color3;
+                    }
+                }
+            }
+        }
+
+        footer {
+            @include Display(space-between);
+            
+            div.attribution {
+                @include Display(flex-start, center);
+
+                font-size: 1rem; 
+                text-align: center;
+
+                color: $color3;
+
+                padding: 1em;
+
+                a {
+                    color: $color3;
+                }
+            }
+
+            div.socialMedias {
+                @include Display(flex-end, flex-start);
+
+                padding: 2.2em;
+
+                div {
+                    display: flex;
+                    align-items: center;
+
+                    border: 1px solid $color3;
+                    border-radius: 50px;
+
+                    padding: 0.4em;
+
+                    margin-left: 1em;
+
+                    &:hover {
+                        border-color: $color2;
+
+                        cursor: pointer;
+                    }
+                }
+
+                img {
+                    @include StyleWH(15px, 15px);
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
